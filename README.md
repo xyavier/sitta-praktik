@@ -4,7 +4,7 @@ Repositori ini berisi kode sumber antarmuka (*frontend*) untuk **SITTA UT** (Sis
 
 ---
 
-## 🛠️ Teknologi yang Digunakan
+## Teknologi yang Digunakan
 
 Proyek ini dibangun menggunakan pendekatan modern yang memisahkan struktur statis dan manajemen reaktif data:
 - **HTML5 & CSS3**: Struktur dasar halaman dan *styling* responsif (didukung oleh *Custom CSS* dan *Flexbox*).
