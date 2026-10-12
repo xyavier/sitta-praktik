@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Informasi Stok Bahan Ajar - SITTA UT</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+  </head>
+
+  <body>
+    <nav class="menu">
+      <ul class="nav-links">
+        <li class="logo-li">
+          <a href="dashboard.html" class="logo-link">
+            <img src="img/ut.png.webp" alt="Logo UT" style="max-width: 50px" />
+          </a>
+        </li>
+        <li><a href="stock.html" class="active">Informasi Bahan Ajar</a></li>
+        <li><a href="tracking.html">Tracking Pengiriman</a></li>
+
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle">
+            Laporan <i class="fa fa-caret-down arrow-icon"></i>
+          </a>
+          <div class="dropdown-content">
+            <a href="#" class="not-available"
+              >Monitoring Progress DO Bahan Ajar</a
+            >
+            <a href="#" class="not-available">Rekap Bahan Ajar</a>
+          </div>
+        </li>
+
+        <li><a href="#" class="not-available">Histori Transaksi</a></li>
+      </ul>
+      <a id="logoutBtn" href="#" class="logout-btn">Logout</a>
+    </nav>
+
+    <!-- STOCK CONTAINER -->
+    <div id="stockApp" class="container">
+      <h2>Informasi Stok Bahan Ajar</h2>
+
+      <button class="animated-button btn-inline" @click="openAddModal">
+        <span
+          ><i class="fa fa-plus" aria-hidden="true"></i> Tambah Bahan Ajar</span
+        >
+        <span></span>
+      </button>
+
+      <table>
+        <thead>
+          <tr>
+            <th>Sampul</th>
+            <th>Kode Barang</th>
+            <th>Judul</th>
+            <th>Edisi</th>
+            <th>Stok</th>
+            <th>Aksi</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr
+            v-for="item in filteredData"
+            :key="item.kode"
+            @dblclick="showDetail(item)"
+            style="cursor: pointer"
+          >
+            <td>
+              <img
+                :src="item.sampul"
+                :alt="item.judul"
+                style="width: 100px; height: 130px"
+              />
+            </td>
+            <td>{{ item.kode }}</td>
+            <td>{{ item.judul }}</td>
+            <td>{{ item.edisi }}</td>
+            <td>{{ item.qty }}</td>
+            <td style="vertical-align: middle; text-align: center">
+              <div
+                style="
+                  display: flex;
+                  gap: 10px;
+                  justify-content: center;
+                  align-items: center;
+                "
+              >
+                <button @click.stop="editItem(item)" class="edit">
+                  <i class="fa fa-pencil" aria-hidden="true"></i>
+                </button>
+                <button @click.stop="deleteItem(item)" class="delete">
+                  <i class="fa fa-trash-o" aria-hidden="true"></i>
+                </button>
+              </div>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <script src="js/script.js"></script>
+    <script src="https://unpkg.com/vue@3.4.38/dist/vue.global.prod.js"></script>
+    <script src="js/dataBahanAjar.js"></script>
+    <script src="js/stock-app.js"></script>
+  </body>
+</html>
