@@ -23,5 +23,5 @@ Untuk menguji fitur login di dalam sistem, Anda dapat menggunakan salah satu aku
   - *Email:* `admin@ut.ac.id`
   - *Password:* `admin123`
 - **UPBJJ Jakarta:**
-  - *Email:* `ceker@ut.ac.id`
-  - *Password:* `ceker123`
+  - *Email:* `rina@ut.ac.id`
+  - *Password:* `rina123`
